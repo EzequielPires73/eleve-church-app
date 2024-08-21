@@ -1,13 +1,13 @@
 import { typography } from "@/constants/Typography";
-import { Link, useLocalSearchParams } from "expo-router";
-import { View } from "react-native";
+import { Link, router, useLocalSearchParams } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function AppointmentsView() {
     const local = useLocalSearchParams();
     
     return (
         <View>
-            <Link href={'/appointments'} style={typography.h2}>{local.id}</Link>
+            <Pressable  onPress={() => router.back()}><Text style={typography.h1}>{local.id}</Text></Pressable>
         </View>
     )
 }

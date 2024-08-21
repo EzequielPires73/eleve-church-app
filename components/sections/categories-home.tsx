@@ -1,6 +1,6 @@
 import { categoriesHome } from "@/constants/Home";
 import { FlatList, StyleSheet, View } from "react-native";
-import { CardCategoryHome } from "../card-home";
+import { CardCategoryHome } from "../cards/card-home";
 
 export function CategoriesHomeSection() {
     return (
@@ -8,6 +8,7 @@ export function CategoriesHomeSection() {
             <FlatList
                 data={categoriesHome}
                 columnWrapperStyle={styles.row}
+                ItemSeparatorComponent={() => <View style={{height: 8}}/>}
                 contentContainerStyle={{ gap: 8 }}
                 renderItem={({ item }) => <CardCategoryHome {...item} key={item.id} />}
                 keyExtractor={item => item.id}
@@ -19,8 +20,8 @@ export function CategoriesHomeSection() {
 
 const styles = StyleSheet.create({
     container: {
-      padding: 16,
-      paddingBottom: 0,
+      paddingHorizontal: 16,
+      gap: 8
     },
     row: {
       justifyContent: 'space-between',

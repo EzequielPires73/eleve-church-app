@@ -29,8 +29,7 @@ export default function TabLayout() {
                 key={tab.id}
                 name={tab.name}
                 options={{
-                    header: () => <Header />,
-                    title: tab.title,
+                    headerShown: false,
                     tabBarIcon: ({ size, color, focused }) => (
                         <Ionicons
                             name={focused ? tab.iconActive as 'home' : tab.icon as 'home'}
